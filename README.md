@@ -13,8 +13,20 @@ This project requires **Python 3.6** and the following Python libraries installe
 
 You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html)
 
+**Dataset 1: Features**
+1) Cancer (this dataset is a subset of multiple cancer data - so only Breast in this dataset)
+2? Sex
+3) Age Group
+4) Stage (of the cancer)
+5) Survival Time (years)
+6) Cohort (years of the data collection)
+7) Country
+8) Number of Patients
+9) Net Survival (%)
+10) Net Survival Lower CI
+11) Net Survival Upper C1
 
-**Features**
+**Dataset 2: Features**
 1) ID number
 2) Diagnosis (M = malignant, B = benign)
 (3–32)
@@ -54,4 +66,6 @@ Kagglecom. C. (2019). Kagglecom. https://www.kaggle.com/uciml/breast-cancer-wisc
 
 Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science
 
-Pinkribbonfoundationorguk. C. (2019). Pinkribbonfoundationorguk. [Online]. [11 September 2019]. Available from: https://www.pinkribbonfoundation.org.uk/
+Pinkribbonfoundationorguk. C. (2019). Pinkribbonfoundationorguk. [Online]. [11 September 2019]. Available at https://www.pinkribbonfoundation.org.uk/
+
+Ons.gov.uk. (2019). Cancer survival in England - adults diagnosed - Office for National Statistics. [online]. [Accessed 28 Sep. 2019] Available at: https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed .

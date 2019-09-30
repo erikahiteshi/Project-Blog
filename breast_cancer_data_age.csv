@@ -1,0 +1,99 @@
+Cancer site,Sex,Age group,Survival type,Stage,Survival time (years),Cohort,Country,Number of patients,Net survival,Net survival lower CI,Net survival upper CI
+Breast,Women,15-44,Non-standardised,Stage 1,1-year,2013-2017,England,"5,637",99.9,99.8,100.0
+Breast,Women,45-54,Non-standardised,Stage 1,1-year,2013-2017,England,"18,441",100.0,99.9,100.1
+Breast,Women,55-64,Non-standardised,Stage 1,1-year,2013-2017,England,"22,288",100.1,100.0,100.2
+Breast,Women,65-74,Non-standardised,Stage 1,1-year,2013-2017,England,"23,991",100.3,100.2,100.4
+Breast,Women,75-99,Non-standardised,Stage 1,1-year,2013-2017,England,"12,669",99.6,99.1,100.0
+Breast,Women,All ages,Non-standardised,Stage 1,1-year,2013-2017,England,"83,026",100.0,100.0,100.1
+Breast,Women,All ages,Age-standardised,Stage 1,1-year,2013-2017,England,"83,026",100.0,99.8,100.1
+Breast,Women,15-44,Non-standardised,Stage 2,1-year,2013-2017,England,"9,492",99.6,99.4,99.7
+Breast,Women,45-54,Non-standardised,Stage 2,1-year,2013-2017,England,"18,460",99.7,99.6,99.8
+Breast,Women,55-64,Non-standardised,Stage 2,1-year,2013-2017,England,"15,609",99.7,99.5,99.8
+Breast,Women,65-74,Non-standardised,Stage 2,1-year,2013-2017,England,"16,068",99.4,99.2,99.6
+Breast,Women,75-99,Non-standardised,Stage 2,1-year,2013-2017,England,"19,768",97.1,96.7,97.5
+Breast,Women,All ages,Non-standardised,Stage 2,1-year,2013-2017,England,"79,397",99.0,98.9,99.1
+Breast,Women,All ages,Age-standardised,Stage 2,1-year,2013-2017,England,"79,397",98.9,98.7,99.0
+Breast,Women,15-44,Non-standardised,Stage 3,1-year,2013-2017,England,"2,592",97.4,96.8,98.0
+Breast,Women,45-54,Non-standardised,Stage 3,1-year,2013-2017,England,"4,410",98.4,98.0,98.8
+Breast,Women,55-64,Non-standardised,Stage 3,1-year,2013-2017,England,"3,486",98.0,97.5,98.6
+Breast,Women,65-74,Non-standardised,Stage 3,1-year,2013-2017,England,"3,395",96.8,96.1,97.5
+Breast,Women,75-99,Non-standardised,Stage 3,1-year,2013-2017,England,"4,486",90.7,89.6,91.8
+Breast,Women,All ages,Non-standardised,Stage 3,1-year,2013-2017,England,"18,369",96.0,95.7,96.4
+Breast,Women,All ages,Age-standardised,Stage 3,1-year,2013-2017,England,"18,369",95.5,95.1,95.9
+Breast,Women,15-44,Non-standardised,Stage 4,1-year,2013-2017,England,856,83.5,81.0,86.0
+Breast,Women,45-54,Non-standardised,Stage 4,1-year,2013-2017,England,"1,604",79.9,77.9,81.9
+Breast,Women,55-64,Non-standardised,Stage 4,1-year,2013-2017,England,"1,676",73.2,71.1,75.4
+Breast,Women,65-74,Non-standardised,Stage 4,1-year,2013-2017,England,"2,237",66.3,64.3,68.3
+Breast,Women,75-99,Non-standardised,Stage 4,1-year,2013-2017,England,"3,921",52.7,51.0,54.4
+Breast,Women,All ages,Non-standardised,Stage 4,1-year,2013-2017,England,"10,294",65.8,64.8,66.7
+Breast,Women,All ages,Age-standardised,Stage 4,1-year,2013-2017,England,"10,294",66.0,65.0,66.9
+Breast,Women,15-44,Non-standardised,Unstageable,1-year,2013-2017,England,94,99.0,96.9,101.0
+Breast,Women,45-54,Non-standardised,Unstageable,1-year,2013-2017,England,88,99.0,96.8,101.2
+Breast,Women,55-64,Non-standardised,Unstageable,1-year,2013-2017,England,82,96.5,92.4,100.7
+Breast,Women,65-74,Non-standardised,Unstageable,1-year,2013-2017,England,72,81.5,72.3,90.7
+Breast,Women,75-99,Non-standardised,Unstageable,1-year,2013-2017,England,86,82.2,72.7,91.6
+Breast,Women,All ages,Non-standardised,Unstageable,1-year,2013-2017,England,422,92.2,89.4,95.1
+Breast,Women,All ages,Age-standardised,Unstageable,1-year,2013-2017,England,422,88.2,84.0,92.5
+Breast,Women,15-44,Non-standardised,Unknown/missing,1-year,2013-2017,England,"1,681",97.8,97.1,98.5
+Breast,Women,45-54,Non-standardised,Unknown/missing,1-year,2013-2017,England,"3,163",97.3,96.7,97.9
+Breast,Women,55-64,Non-standardised,Unknown/missing,1-year,2013-2017,England,"2,659",94.9,94.0,95.8
+Breast,Women,65-74,Non-standardised,Unknown/missing,1-year,2013-2017,England,"3,022",90.0,88.9,91.1
+Breast,Women,75-99,Non-standardised,Unknown/missing,1-year,2013-2017,England,"8,305",77.9,76.8,79.0
+Breast,Women,All ages,Non-standardised,Unknown/missing,1-year,2013-2017,England,"18,830",87.2,86.7,87.8
+Breast,Women,All ages,Age-standardised,Unknown/missing,1-year,2013-2017,England,"18,830",88.7,88.2,89.2
+Breast,Women,15-44,Non-standardised,All stages combined,1-year,2013-2017,England,"20,352",98.6,98.4,98.7
+Breast,Women,45-54,Non-standardised,All stages combined,1-year,2013-2017,England,"46,166",98.9,98.7,99.0
+Breast,Women,55-64,Non-standardised,All stages combined,1-year,2013-2017,England,"45,800",98.5,98.4,98.6
+Breast,Women,65-74,Non-standardised,All stages combined,1-year,2013-2017,England,"48,785",97.6,97.4,97.7
+Breast,Women,75-99,Non-standardised,All stages combined,1-year,2013-2017,England,"49,235",90.3,90.0,90.7
+Breast,Women,All ages,Non-standardised,All stages combined,1-year,2013-2017,England,"210,338",96.5,96.4,96.6
+Breast,Women,All ages,Age-standardised,All stages combined,1-year,2013-2017,England,"210,338",95.8,95.7,96.0
+Breast,Women,15-44,Non-standardised,Stage 1,5-years,2013-2017,England,"5,637",97.5,96.9,98.2
+Breast,Women,45-54,Non-standardised,Stage 1,5-years,2013-2017,England,"18,441",98.6,98.3,99.0
+Breast,Women,55-64,Non-standardised,Stage 1,5-years,2013-2017,England,"22,288",99.2,98.9,99.6
+Breast,Women,65-74,Non-standardised,Stage 1,5-years,2013-2017,England,"23,991",99.7,99.2,100.2
+Breast,Women,75-99,Non-standardised,Stage 1,5-years,2013-2017,England,"12,669",95.0,93.0,96.9
+Breast,Women,All ages,Non-standardised,Stage 1,5-years,2013-2017,England,"83,026",98.5,98.1,98.8
+Breast,Women,All ages,Age-standardised,Stage 1,5-years,2013-2017,England,"83,026",97.9,97.3,98.5
+Breast,Women,15-44,Non-standardised,Stage 2,5-years,2013-2017,England,"9,492",90.6,89.8,91.5
+Breast,Women,45-54,Non-standardised,Stage 2,5-years,2013-2017,England,"18,460",94.2,93.6,94.7
+Breast,Women,55-64,Non-standardised,Stage 2,5-years,2013-2017,England,"15,609",93.5,92.8,94.2
+Breast,Women,65-74,Non-standardised,Stage 2,5-years,2013-2017,England,"16,068",92.7,91.9,93.5
+Breast,Women,75-99,Non-standardised,Stage 2,5-years,2013-2017,England,"19,768",81.7,80.1,83.4
+Breast,Women,All ages,Non-standardised,Stage 2,5-years,2013-2017,England,"79,397",90.2,89.7,90.7
+Breast,Women,All ages,Age-standardised,Stage 2,5-years,2013-2017,England,"79,397",89.6,89.0,90.2
+Breast,Women,15-44,Non-standardised,Stage 3,5-years,2013-2017,England,"2,592",78.8,76.7,80.9
+Breast,Women,45-54,Non-standardised,Stage 3,5-years,2013-2017,England,"4,410",81.4,79.7,83.1
+Breast,Women,55-64,Non-standardised,Stage 3,5-years,2013-2017,England,"3,486",80.4,78.5,82.3
+Breast,Women,65-74,Non-standardised,Stage 3,5-years,2013-2017,England,"3,395",74.9,72.5,77.2
+Breast,Women,75-99,Non-standardised,Stage 3,5-years,2013-2017,England,"4,486",58.9,55.4,62.4
+Breast,Women,All ages,Non-standardised,Stage 3,5-years,2013-2017,England,"18,369",74.2,73.0,75.4
+Breast,Women,All ages,Age-standardised,Stage 3,5-years,2013-2017,England,"18,369",72.0,70.5,73.5
+Breast,Women,15-44,Non-standardised,Stage 4,5-years,2013-2017,England,856,43.1,38.5,47.7
+Breast,Women,45-54,Non-standardised,Stage 4,5-years,2013-2017,England,"1,604",43.4,40.2,46.6
+Breast,Women,55-64,Non-standardised,Stage 4,5-years,2013-2017,England,"1,676",33.1,30.0,36.2
+Breast,Women,65-74,Non-standardised,Stage 4,5-years,2013-2017,England,"2,237",25.4,22.7,28.2
+Breast,Women,75-99,Non-standardised,Stage 4,5-years,2013-2017,England,"3,921",16.2,14.0,18.4
+Breast,Women,All ages,Non-standardised,Stage 4,5-years,2013-2017,England,"10,294",27.5,26.1,28.8
+Breast,Women,All ages,Age-standardised,Stage 4,5-years,2013-2017,England,"10,294",26.2,24.8,27.7
+Breast,Women,15-44,Non-standardised,Unstageable,5-years,2013-2017,England,94,:,:,:
+Breast,Women,45-54,Non-standardised,Unstageable,5-years,2013-2017,England,88,:,:,:
+Breast,Women,55-64,Non-standardised,Unstageable,5-years,2013-2017,England,82,:,:,:
+Breast,Women,65-74,Non-standardised,Unstageable,5-years,2013-2017,England,72,:,:,:
+Breast,Women,75-99,Non-standardised,Unstageable,5-years,2013-2017,England,86,55.7,37.1,74.2
+Breast,Women,All ages,Non-standardised,Unstageable,5-years,2013-2017,England,422,77.4,71.0,83.9
+Breast,Women,All ages,Age-standardised,Unstageable,5-years,2013-2017,England,422,:,:,:
+Breast,Women,15-44,Non-standardised,Unknown/missing,5-years,2013-2017,England,"1,681",83.2,80.9,85.4
+Breast,Women,45-54,Non-standardised,Unknown/missing,5-years,2013-2017,England,"3,163",86.2,84.7,87.7
+Breast,Women,55-64,Non-standardised,Unknown/missing,5-years,2013-2017,England,"2,659",83.9,82.2,85.6
+Breast,Women,65-74,Non-standardised,Unknown/missing,5-years,2013-2017,England,"3,022",74.3,72.3,76.4
+Breast,Women,75-99,Non-standardised,Unknown/missing,5-years,2013-2017,England,"8,305",48.1,45.8,50.4
+Breast,Women,All ages,Non-standardised,Unknown/missing,5-years,2013-2017,England,"18,830",66.8,65.6,68.0
+Breast,Women,All ages,Age-standardised,Unknown/missing,5-years,2013-2017,England,"18,830",69.1,68.0,70.3
+Breast,Women,15-44,Non-standardised,All stages combined,5-years,2013-2017,England,"20,352",88.3,87.7,89.0
+Breast,Women,45-54,Non-standardised,All stages combined,5-years,2013-2017,England,"46,166",92.3,91.9,92.7
+Breast,Women,55-64,Non-standardised,All stages combined,5-years,2013-2017,England,"45,800",92.4,92.0,92.8
+Breast,Women,65-74,Non-standardised,All stages combined,5-years,2013-2017,England,"48,785",90.5,90.0,91.0
+Breast,Women,75-99,Non-standardised,All stages combined,5-years,2013-2017,England,"49,235",71.5,70.5,72.6
+Breast,Women,All ages,Non-standardised,All stages combined,5-years,2013-2017,England,"210,338",86.6,86.3,86.9
+Breast,Women,All ages,Age-standardised,All stages combined,5-years,2013-2017,England,"210,338",85.0,84.6,85.4

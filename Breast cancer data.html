@@ -13117,23 +13117,21 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Breast-Cancer-Dataset">Breast Cancer Dataset<a class="anchor-link" href="#Breast-Cancer-Dataset">&#182;</a></h1><p>Breast Cancer is a very common cancer among women, making it a significant health issue across not only the UK, but the globe. It is well documented that an early diagnosis is critical to help women  increase their survival chance. Most lumps are classified as either benign (not harmful) or malignant (cancerous).</p>
-<p>This notebook will be looking at using supervised algorithms to classify whether an individuals' breast data indicates that the lump is benign or malignant.</p>
-<p>The dataset can be found on the <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">UCI Machine Learning Repository</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data-Overview">Data Overview<a class="anchor-link" href="#Data-Overview">&#182;</a></h3><p>This dataset is made up of 32 columns, each relating to a feature of a breast mass.</p>
+<p>First we will take a look into some statistics around breast cancer in UK;</p>
+<ol>
+<li>Which age groups are most at risk?</li>
+<li>At which age/cancer stage are you most and least likely to survive?</li>
+</ol>
+<p>This notebook then will be looking at using supervised algorithms to classify whether an individuals' breast data indicates that the lump is benign or malignant.</p>
+<p>Dataset 1 can be found on <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed">Office for National Statistics</a></p>
+<p>Dataset 2 can be found on the <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">UCI Machine Learning Repository</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13161,6 +13159,536 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">general_breast_cancer_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;breast_cancer_data_age.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">general_breast_cancer_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cancer site</th>
+      <th>Sex</th>
+      <th>Age group</th>
+      <th>Survival type</th>
+      <th>Stage</th>
+      <th>Survival time (years)</th>
+      <th>Cohort</th>
+      <th>Country</th>
+      <th>Number of patients</th>
+      <th>Net survival</th>
+      <th>Net survival lower CI</th>
+      <th>Net survival upper CI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Breast</td>
+      <td>Women</td>
+      <td>15-44</td>
+      <td>Non-standardised</td>
+      <td>Stage 1</td>
+      <td>1-year</td>
+      <td>2013-2017</td>
+      <td>England</td>
+      <td>5,637</td>
+      <td>99.9</td>
+      <td>99.8</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Breast</td>
+      <td>Women</td>
+      <td>45-54</td>
+      <td>Non-standardised</td>
+      <td>Stage 1</td>
+      <td>1-year</td>
+      <td>2013-2017</td>
+      <td>England</td>
+      <td>18,441</td>
+      <td>100.0</td>
+      <td>99.9</td>
+      <td>100.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Breast</td>
+      <td>Women</td>
+      <td>55-64</td>
+      <td>Non-standardised</td>
+      <td>Stage 1</td>
+      <td>1-year</td>
+      <td>2013-2017</td>
+      <td>England</td>
+      <td>22,288</td>
+      <td>100.1</td>
+      <td>100.0</td>
+      <td>100.2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's get some insight into our data.</p>
+<p>Firstly, lets look at the totals of breast cancer cases for the different age groups.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age_list</span> <span class="o">=</span> <span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="s2">&quot;Age group&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;15-44&#39; &#39;45-54&#39; &#39;55-64&#39; &#39;65-74&#39; &#39;75-99&#39; &#39;All ages&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_df</span> <span class="o">=</span> <span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="s2">&quot;Stage&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;All stages combined&quot;</span><span class="p">]</span>
+<span class="n">total_df_survival</span> <span class="o">=</span> <span class="n">total_df</span><span class="p">[</span><span class="n">total_df</span><span class="p">[</span><span class="s2">&quot;Survival time (years)&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1-year&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total_df_survival</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Cancer site    Sex Age group     Survival type                Stage  \
+42      Breast  Women     15-44  Non-standardised  All stages combined   
+43      Breast  Women     45-54  Non-standardised  All stages combined   
+44      Breast  Women     55-64  Non-standardised  All stages combined   
+45      Breast  Women     65-74  Non-standardised  All stages combined   
+46      Breast  Women     75-99  Non-standardised  All stages combined   
+47      Breast  Women  All ages  Non-standardised  All stages combined   
+48      Breast  Women  All ages  Age-standardised  All stages combined   
+
+   Survival time (years)     Cohort  Country Number of patients Net survival  \
+42                1-year  2013-2017  England             20,352         98.6   
+43                1-year  2013-2017  England             46,166         98.9   
+44                1-year  2013-2017  England             45,800         98.5   
+45                1-year  2013-2017  England             48,785         97.6   
+46                1-year  2013-2017  England             49,235         90.3   
+47                1-year  2013-2017  England            210,338         96.5   
+48                1-year  2013-2017  England            210,338         95.8   
+
+   Net survival lower CI Net survival upper CI  
+42                  98.4                  98.7  
+43                  98.7                  99.0  
+44                  98.4                  98.6  
+45                  97.4                  97.7  
+46                  90.0                  90.7  
+47                  96.4                  96.6  
+48                  95.7                  96.0  
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">age_list</span><span class="p">:</span>
+    
+    <span class="n">new_df</span> <span class="o">=</span> <span class="n">total_df_survival</span><span class="p">[</span><span class="n">total_df_survival</span><span class="p">[</span><span class="s2">&quot;Age group&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span>
+    <span class="c1">#print(new_df)</span>
+    <span class="n">amount</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Number of patients&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot; ----- &quot;</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>15-44  -----  20,352
+45-54  -----  46,166
+55-64  -----  45,800
+65-74  -----  48,785
+75-99  -----  49,235
+All ages  -----  210,338
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of these 210,338 patients, what was the Net Survival rate disregarding the stage of their cancer?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Filter down to non-standardised data and age group &#39;all ages&#39;</span>
+<span class="n">nonstandard_df</span> <span class="o">=</span> <span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="s2">&quot;Survival type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Non-standardised&quot;</span><span class="p">]</span>
+<span class="n">all_ages_df</span> <span class="o">=</span> <span class="n">nonstandard_df</span><span class="p">[</span><span class="n">nonstandard_df</span><span class="p">[</span><span class="s2">&quot;Age group&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;All ages&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Now we want the stage to be &#39;all stages combined&#39;</span>
+<span class="n">agescombined_df</span> <span class="o">=</span> <span class="n">all_ages_df</span><span class="p">[</span><span class="n">all_ages_df</span><span class="p">[</span><span class="s2">&quot;Stage&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;All stages combined&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">agescombined_df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Cancer site    Sex Age group     Survival type                Stage  \
+47      Breast  Women  All ages  Non-standardised  All stages combined   
+96      Breast  Women  All ages  Non-standardised  All stages combined   
+
+   Survival time (years)     Cohort  Country Number of patients Net survival  \
+47                1-year  2013-2017  England            210,338         96.5   
+96               5-years  2013-2017  England            210,338         86.6   
+
+   Net survival lower CI Net survival upper CI  
+47                  96.4                  96.6  
+96                  86.3                  86.9  
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">agescombined_df</span><span class="p">[[</span><span class="s2">&quot;Survival time (years)&quot;</span><span class="p">,</span> <span class="s2">&quot;Net survival&quot;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survival time (years)</th>
+      <th>Net survival</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>47</th>
+      <td>1-year</td>
+      <td>96.5</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>5-years</td>
+      <td>86.6</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now lets look at this on the different age categories.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nonstandard_df</span> <span class="o">=</span> <span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="n">general_breast_cancer_df</span><span class="p">[</span><span class="s2">&quot;Survival type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Non-standardised&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">age_list</span><span class="p">:</span>
+    <span class="n">all_ages_df</span> <span class="o">=</span> <span class="n">nonstandard_df</span><span class="p">[</span><span class="n">nonstandard_df</span><span class="p">[</span><span class="s2">&quot;Age group&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span>
+    <span class="n">agescombined_df</span> <span class="o">=</span> <span class="n">all_ages_df</span><span class="p">[</span><span class="n">all_ages_df</span><span class="p">[</span><span class="s2">&quot;Stage&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;All stages combined&#39;</span><span class="p">]</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">agescombined_df</span><span class="p">[[</span><span class="s2">&quot;Survival time (years)&quot;</span><span class="p">,</span> <span class="s2">&quot;Net survival&quot;</span><span class="p">]]</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Survival time (years)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>15-44
+                      Net survival
+Survival time (years)             
+1-year                        98.6
+5-years                       88.3
+---------------------------------------
+45-54
+                      Net survival
+Survival time (years)             
+1-year                        98.9
+5-years                       92.3
+---------------------------------------
+55-64
+                      Net survival
+Survival time (years)             
+1-year                        98.5
+5-years                       92.4
+---------------------------------------
+65-74
+                      Net survival
+Survival time (years)             
+1-year                        97.6
+5-years                       90.5
+---------------------------------------
+75-99
+                      Net survival
+Survival time (years)             
+1-year                        90.3
+5-years                       71.5
+---------------------------------------
+All ages
+                      Net survival
+Survival time (years)             
+1-year                        96.5
+5-years                       86.6
+---------------------------------------
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we can see that as the age increases, the chance of survival is significantly decreasing - especially in the case of the 5 year survival rate.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-II">Part II<a class="anchor-link" href="#Part-II">&#182;</a></h2><p>Now lets look at our second data set. This dataset shows measurements of breast lumps in female patients. We will use this data to see if we can predict if a lump is benign or malignant.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Overview">Data Overview<a class="anchor-link" href="#Data-Overview">&#182;</a></h3><p>This dataset is made up of 32 columns, each relating to a feature of a breast mass.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
